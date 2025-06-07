@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Define your theme variables here */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-danger: #ef4444;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-gray-100: #f3f4f6;
+  --color-gray-900: #111827;
+}
+
+/* Optional: Add custom utilities or overrides */
+@layer utilities {
+  .glass-pane {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Optional: Add custom base styles */
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+}
+
+
+@font-face {
+  font-family: 'Arpona';
+  src: url('/fonts/Arpona-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-arpona {
+  font-family: 'Arpona', serif;
+}
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F5FF; /* Light Track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4B39EF; /* Thumb */
+  border-radius: 6px;
+  border: 2px solid #F7F5FF; /* Match track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #372580; /* On hover */
+}
+
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1B1340; /* Dark Track */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #3AB5C6; /* Thumb */
+  border: 2px solid #1B1340; /* Match track */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #73c8d3; /* On hover */
+}
